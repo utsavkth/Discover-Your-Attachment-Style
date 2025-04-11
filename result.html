@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Attachment Style Result</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+</head>
+<body>
+  <header class="header">
+    <img src="assets/logo.png" alt="Logo" class="logo" />
+    <h1>Attachment Style Quiz</h1>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="theory.html">What is Attachment Theory?</a>
+      <a href="about.html">Why I Created This</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section id="resultContainer" class="result-section">
+      <!-- Result content will be injected here by result.js -->
+      <canvas id="resultChart" class="result-chart"></canvas>
+      <div class="result-icon-metaphor" id="metaphorContainer"></div>
+      <div class="result-buttons">
+        <button id="downloadBtn" class="cta-button">Download PDF</button>
+        <button id="restartBtn" class="cta-button secondary">Retake Quiz</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Discover Your Attachment Style. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="js/result.js"></script>
+</body>
+</html>
