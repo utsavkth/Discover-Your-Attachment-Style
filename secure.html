@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure Attachment Style</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="logo.png" />
+</head>
+<body>
+    <script>
+        // Apply saved theme on load
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark");
+        }
+      </script>
+      
+  <header class="header">
+    <div class="logo-container">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <h1 class="site-title">Secure Attachment</h1>
+    </div>
+    <div class="header-actions">
+      <button id="darkModeToggle" class="toggle-button">🌙</button>
+      <button class="hamburger" id="hamburger">☰</button>
+    </div>
+    <nav class="nav" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="theory.html">Theory</a>
+      <a href="quiz.html">Quiz</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="hero fade-in">
+      <h2 class="hero-heading">You Feel Safe Giving and Receiving Love</h2>
+      <p>
+        People with secure attachment aren’t perfect — they just know how to show up, express their needs, and respect boundaries. They value closeness without fearing it.
+      </p>
+
+      <h3>Typical Behaviors</h3>
+      <ul>
+        <li>Openly communicating thoughts and feelings</li>
+        <li>Trusting others without fear of betrayal</li>
+        <li>Balancing independence with intimacy</li>
+        <li>Comforting their partner without losing themselves</li>
+        <li>Handling conflict without emotional overwhelm</li>
+      </ul>
+
+      <h3>What You Might Say</h3>
+      <blockquote>“I love you, and I want us to figure this out together.”</blockquote>
+
+      <h3>Attachment Matchups: How It Feels</h3>
+        <ul>
+        <li><strong>Secure + Secure:</strong> Emotional safety, mutual respect, open communication — a grounded and steady relationship foundation.</li>
+        <li><strong>Secure + Anxious:</strong> The secure partner offers reassurance while the anxious partner brings passion. If patient, this can evolve into deep trust.</li>
+        <li><strong>Secure + Avoidant:</strong> The secure partner may feel frustrated by emotional distance, but can gently guide the avoidant toward openness — if the avoidant is willing.</li>
+        </ul>
+
+
+      <p>
+        If this is your default, amazing. If not — remember, secure attachment is a skill, not a personality trait. It can be learned, practiced, and grown.
+      </p>
+
+      <a href="theory.html" class="cta-button secondary">Back to Theory</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Discover Your Attachment Style</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("darkModeToggle");
+    toggle.textContent = document.body.classList.contains("dark") ? "🌞" : "🌙";
+
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      const theme = document.body.classList.contains("dark") ? "dark" : "light";
+      localStorage.setItem("theme", theme);
+      toggle.textContent = theme === "dark" ? "🌞" : "🌙";
+    });
+
+    document.getElementById("hamburger").addEventListener("click", () => {
+      document.getElementById("navLinks").classList.toggle("open");
+    });
+  </script>
+</body>
+</html>

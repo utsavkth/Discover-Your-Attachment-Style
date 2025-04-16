@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avoidant Attachment Style</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="logo.png" />
+</head>
+<body>
+    <script>
+        // Apply saved theme on load
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark");
+        }
+      </script>
+      
+  <header class="header">
+    <div class="logo-container">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <h1 class="site-title">Avoidant Attachment</h1>
+    </div>
+    <div class="header-actions">
+      <button id="darkModeToggle" class="toggle-button">🌙</button>
+      <button class="hamburger" id="hamburger">☰</button>
+    </div>
+    <nav class="nav" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="theory.html">Theory</a>
+      <a href="quiz.html">Quiz</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="hero fade-in">
+      <h2 class="hero-heading">You Value Freedom — But Fear Dependency</h2>
+      <p>
+        Avoidant attachers often need emotional distance to feel safe. Intimacy can feel suffocating — and sometimes, love feels like a threat to independence.
+      </p>
+
+      <h3>Deactivating Behaviors</h3>
+      <div class="centered-list">
+        <ul class="clean-list">
+        <li>🔺Focusing on flaws in your partner</li>
+        <li>🔺Pulling away when things feel “too close”</li>
+        <li>🔺Delaying commitment or avoiding labels</li>
+        <li>🔺Craving space — but not explaining why</li>
+        <li>🔺Fantasizing about being single again</li>
+      </ul>
+
+      <h3>What You Might Say</h3>
+      <blockquote>“I just need time to think. I don’t want to talk about it right now.”</blockquote>
+
+      <h3>Attachment Matchups: How It Feels</h3>
+      <div class="centered-list">
+        <ul class="clean-list">
+        <li><strong>💬 Avoidant + Avoidant:</strong> Minimal emotional demands may feel peaceful, but deep intimacy can stagnate or be avoided entirely.</li>
+        <li><strong>💬 Avoidant + Anxious:</strong> One chases, the other runs. Emotional needs clash, often creating conflict, misreading, and exhaustion.</li>
+        <li><strong>💬 Avoidant + Secure:</strong> A chance to grow — if the avoidant accepts emotional feedback and the secure stays grounded in self-worth.</li>
+        </ul>
+
+
+      <p>
+        Avoidance isn’t cruelty — it’s protection. But long-term connection requires letting safe people get a little closer.
+      </p>
+
+      <a href="theory.html" class="cta-button secondary">Back to Theory</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Discover Your Attachment Style</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("darkModeToggle");
+    toggle.textContent = document.body.classList.contains("dark") ? "🌞" : "🌙";
+
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      const theme = document.body.classList.contains("dark") ? "dark" : "light";
+      localStorage.setItem("theme", theme);
+      toggle.textContent = theme === "dark" ? "🌞" : "🌙";
+    });
+
+    document.getElementById("hamburger").addEventListener("click", () => {
+      document.getElementById("navLinks").classList.toggle("open");
+    });
+  </script>
+</body>
+</html>
