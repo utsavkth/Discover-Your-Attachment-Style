@@ -8,24 +8,35 @@
   <link rel="icon" type="image/png" href="logo.png" />
 </head>
 <body>
+    <script>
+        // Apply saved theme on load
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark");
+        }
+      </script>
+      
   <header class="header">
-    <img src="logo.png" alt="Logo" class="logo" />
-    <h1>Attachment Style Quiz</h1>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="theory.html">What is Attachment Theory?</a>
-      <a href="about.html">Why I Created This</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="contact.html">Contact</a>
+    <div class="logo-container">
+      <img src="logo.png" alt="Attachment Style Logo" class="logo" />
+      <h1 class="site-title">Attachment Style Quiz</h1>
+    </div>
+    <div class="header-actions">
+      <button id="darkModeToggle" class="toggle-button">🌙</button>
+      <button class="hamburger" id="hamburger">☰</button>
+    </div>
+    <nav class="nav" id="navLinks">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="theory.html" class="nav-link">What is Attachment Theory?</a>
+      <a href="about.html" class="nav-link">Why I Created This</a>
+      <a href="privacy.html" class="nav-link">Privacy</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </nav>
-    <button id="darkModeToggle" class="toggle-button">🌓</button>
   </header>
 
   <main class="main">
-    <!-- 👤 Quiz Setup Form -->
-    <section id="introForm" class="form-section">
-      <h2>Before We Start...</h2>
-      <p>Please fill in a few quick details so we can personalize your results.</p>
+    <section id="introForm" class="hero fade-in">
+      <h2 class="hero-heading">Before We Start...</h2>
+      <p class="hero-subtext">Please fill in a few quick details so we can personalize your results.</p>
 
       <form id="userForm" class="user-form" aria-label="User Info Form">
         <label for="username">
@@ -59,10 +70,8 @@
       </form>
     </section>
 
-    <!-- 📋 Quiz Section -->
-    <section id="quizSection" class="quiz-section hidden">
+    <section id="quizSection" class="quiz-section hidden fade-in">
       <div id="sectionHeader" class="section-header"></div>
-
       <div id="quizContainer"></div>
 
       <div class="quiz-controls">
@@ -80,7 +89,21 @@
     <p>&copy; 2025 Discover Your Attachment Style. All rights reserved.</p>
   </footer>
 
-  <script src="darkmode.js"></script>
   <script src="quiz.js"></script>
+  <script>
+    const toggle = document.getElementById("darkModeToggle");
+    toggle.textContent = document.body.classList.contains("dark") ? "🌞" : "🌙";
+
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      const theme = document.body.classList.contains("dark") ? "dark" : "light";
+      localStorage.setItem("theme", theme);
+      toggle.textContent = theme === "dark" ? "🌞" : "🌙";
+    });
+
+    document.getElementById("hamburger").addEventListener("click", () => {
+      document.getElementById("navLinks").classList.toggle("open");
+    });
+  </script>
 </body>
 </html>
