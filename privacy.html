@@ -8,28 +8,40 @@
   <link rel="icon" type="image/png" href="logo.png" />
 </head>
 <body>
+    <script>
+        // Apply saved theme on load
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark");
+        }
+      </script>
+      
   <header class="header">
-    <img src="logo.png" alt="Attachment Style Logo" class="logo" />
-    <h1>Privacy Policy</h1>
-    <nav class="nav" aria-label="Main Navigation">
-      <a href="index.html">Home</a>
-      <a href="theory.html">What is Attachment Theory?</a>
-      <a href="about.html">Why I Created This</a>
-      <a href="privacy.html" class="active">Privacy</a>
-      <a href="contact.html">Contact</a>
+    <div class="logo-container">
+      <img src="logo.png" alt="Attachment Style Logo" class="logo" />
+      <h1 class="site-title">Privacy Policy</h1>
+    </div>
+    <div class="header-actions">
+      <button id="darkModeToggle" class="toggle-button">🌙</button>
+      <button class="hamburger" id="hamburger">☰</button>
+    </div>
+    <nav class="nav" id="navLinks">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="theory.html" class="nav-link">What is Attachment Theory?</a>
+      <a href="about.html" class="nav-link">Why I Created This</a>
+      <a href="privacy.html" class="nav-link active">Privacy</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </nav>
-    <button id="darkModeToggle" class="toggle-button" aria-label="Toggle Dark Mode">🌓</button>
   </header>
 
   <main class="main">
-    <section class="content">
-      <h2>Your Privacy Matters</h2>
+    <section class="hero fade-in">
+      <h2 class="hero-heading">Your Privacy Matters</h2>
       <p>This quiz is built for self-reflection — not for data collection.</p>
 
       <ul class="privacy-list">
         <li><strong>No data is collected or stored.</strong> Your responses live only in your browser session.</li>
-        <li><strongNo cookies, trackers, or analytics</strong> are embedded in this site.</li>
-        <li><strong>No accounts, logins, or external databases.</strong> Everything stays on your device.</li>
+        <li><strong>No cookies, trackers, or analytics.</strong> This site is fully self-contained.</li>
+        <li><strong>No accounts or external databases.</strong> Everything stays on your device.</li>
       </ul>
 
       <h3>Optional Features</h3>
@@ -42,7 +54,9 @@
 
       <h3>Transparency First</h3>
       <p>
-        This is an open-source project. You can <a href="https://github.com/utsavkth/Discover-Your-Attachment-Style" target="_blank" rel="noopener noreferrer">view the full code on GitHub</a> and audit everything yourself.
+        This is an open-source project. You can
+        <a href="https://github.com/utsavkth/Discover-Your-Attachment-Style" target="_blank" rel="noopener noreferrer">view the full code on GitHub</a>
+        and audit everything yourself.
       </p>
       <p>
         Questions or concerns? <a href="contact.html">Reach out here.</a>
@@ -54,6 +68,20 @@
     <p>&copy; 2025 Discover Your Attachment Style. All rights reserved.</p>
   </footer>
 
-  <script src="darkmode.js"></script>
+  <script>
+    const toggle = document.getElementById("darkModeToggle");
+    toggle.textContent = document.body.classList.contains("dark") ? "🌞" : "🌙";
+
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      const theme = document.body.classList.contains("dark") ? "dark" : "light";
+      localStorage.setItem("theme", theme);
+      toggle.textContent = theme === "dark" ? "🌞" : "🌙";
+    });
+
+    document.getElementById("hamburger").addEventListener("click", () => {
+      document.getElementById("navLinks").classList.toggle("open");
+    });
+  </script>
 </body>
 </html>
