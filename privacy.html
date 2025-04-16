@@ -8,13 +8,12 @@
   <link rel="icon" type="image/png" href="logo.png" />
 </head>
 <body>
-    <script>
-        // Apply saved theme on load
-        if (localStorage.getItem("theme") === "dark") {
-          document.body.classList.add("dark");
-        }
-      </script>
-      
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+    }
+  </script>
+
   <header class="header">
     <div class="logo-container">
       <img src="logo.png" alt="Attachment Style Logo" class="logo" />
@@ -33,23 +32,25 @@
     </nav>
   </header>
 
-  <main class="main">
-    <section class="hero fade-in">
+  <main class="main fade-in">
+    <section class="hero">
       <h2 class="hero-heading">Your Privacy Matters</h2>
       <p>This quiz is built for self-reflection — not for data collection.</p>
 
-      <ul class="privacy-list">
-        <li><strong>No data is collected or stored.</strong> Your responses live only in your browser session.</li>
-        <li><strong>No cookies, trackers, or analytics.</strong> This site is fully self-contained.</li>
-        <li><strong>No accounts or external databases.</strong> Everything stays on your device.</li>
-      </ul>
+      <div class="centered-list">
+        <ul class="clean-list">
+          <li>🔐 <strong>No data is collected or stored.</strong> Your responses live only in your browser session.</li>
+          <li>🚫 <strong>No cookies, trackers, or analytics.</strong> This site is fully self-contained.</li>
+          <li>📱 <strong>No accounts or external databases.</strong> Everything stays on your device.</li>
+        </ul>
+      </div>
 
       <h3>Optional Features</h3>
       <p>
         If you download your results as a PDF, they’re generated locally on your device. No data leaves your machine.
       </p>
       <p>
-        Sharing this quiz? Awesome — but we don’t track any clicks or shares.
+        Sharing this quiz? Awesome — but we don’t track any clicks, views, or shares.
       </p>
 
       <h3>Transparency First</h3>
@@ -59,7 +60,7 @@
         and audit everything yourself.
       </p>
       <p>
-        Questions or concerns? <a href="contact.html">Reach out here.</a>
+        Have questions? <a href="contact.html">Reach out here</a>. We’re happy to clarify anything.
       </p>
     </section>
   </main>

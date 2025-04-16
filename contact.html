@@ -8,13 +8,12 @@
   <link rel="icon" type="image/png" href="logo.png" />
 </head>
 <body>
-    <script>
-        // Apply saved theme on load
-        if (localStorage.getItem("theme") === "dark") {
-          document.body.classList.add("dark");
-        }
-      </script>
-      
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+    }
+  </script>
+
   <header class="header">
     <div class="logo-container">
       <img src="logo.png" alt="Attachment Style Logo" class="logo" />
@@ -41,12 +40,12 @@
       </p>
 
       <p>You can reach me through the following:</p>
-      <address>
-        <ul>
-          <li>Email: <a href="mailto:utsavkth@gmail.com">utsavkth@gmail.com</a></li>
-          <li>GitHub: <a href="https://github.com/utsavkth" target="_blank" rel="noopener noreferrer">@utsavkth</a></li>
+      <div class="centered-list">
+        <ul class="clean-list">
+          <li>📧 Email: <a href="mailto:utsavkth@gmail.com">utsavkth@gmail.com</a></li>
+          <li>💻 GitHub: <a href="https://github.com/utsavkth" target="_blank" rel="noopener noreferrer">@utsavkth</a></li>
         </ul>
-      </address>
+      </div>
 
       <p>
         I may not always reply instantly — but I do read every message with curiosity and appreciation. 💬
