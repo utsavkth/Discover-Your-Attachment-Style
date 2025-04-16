@@ -20,54 +20,50 @@ let answers = {};
 const questionsPerPage = 5;
 
 const questions = [
-  // Section 1: How You Connect Emotionally
-  { text: "I often wonder if the person I’m with might lose interest in me.", category: "A" },
-  { text: "I find it easy to connect and show affection in my relationships.", category: "B" },
-  { text: "I worry that if someone sees the real me, they might not stick around.", category: "A" },
-  { text: "I bounce back pretty quickly from breakups — it’s like I switch off.", category: "C" },
-  { text: "When I’m not in a relationship, I feel like something important is missing.", category: "A" },
-  { text: "I struggle to be emotionally supportive when someone I care about is down.", category: "C" },
-  { text: "If my partner is away, I start worrying they’ll lose interest in me.", category: "A" },
-  { text: "Depending on someone emotionally feels okay to me.", category: "B" },
-  { text: "My personal freedom often feels more important than romantic closeness.", category: "C" },
-  { text: "I rarely open up about what I’m really feeling.", category: "C" },
-  { text: "I worry that if I show my feelings, they won’t be returned.", category: "A" },
-  { text: "Overall, I feel good about how my relationships go.", category: "B" },
-  { text: "I don’t really act out or cause drama in my relationships.", category: "B" },
-  { text: "I find myself thinking about my relationships way too much.", category: "A" },
-
-  // Section 2: What You Need from Others
-  { text: "It’s hard for me to fully rely on someone emotionally.", category: "C" },
-  { text: "I get emotionally attached to someone really fast.", category: "A" },
-  { text: "I don’t find it hard to speak up about what I need in relationships.", category: "B" },
-  { text: "I can feel frustrated or irritated with my partner and not really know why.", category: "A" },
-  { text: "I tend to pick up on my partner’s moods quickly — sometimes too much.", category: "A" },
-  { text: "I generally believe that people are honest and dependable.", category: "B" },
-  { text: "I’m more at ease keeping things casual than having deep emotional intimacy.", category: "C" },
-  { text: "I’m okay with sharing my thoughts and emotions with someone I trust.", category: "B" },
-  { text: "If my partner left me, I’d feel lost and wonder if I’ll ever find someone else.", category: "A" },
-  { text: "I get nervous when someone wants to get really emotionally close to me.", category: "C" },
-  { text: "When we argue, I can get so caught up in emotion that I say or do things I regret.", category: "A" },
-  { text: "A disagreement doesn’t usually make me question the whole relationship.", category: "B" },
-  { text: "People I’ve dated often want more closeness than I’m comfortable with.", category: "C" },
-  { text: "Sometimes I don’t feel attractive enough to be truly wanted.", category: "A" },
-  { text: "Some people might see me as boring, but I just don’t create much drama.", category: "B" },
-
-  // Section 3: How You Respond to Conflict & Intimacy
-  { text: "When I miss my partner, I sometimes also feel the urge to pull away.", category: "C" },
-  { text: "I can express disagreement without feeling like I’ll be abandoned.", category: "B" },
-  { text: "I don’t like it when others emotionally depend on me — it feels heavy.", category: "C" },
-  { text: "If someone I’m into checks out others, I notice — but I don’t let it bother me for long.", category: "B" },
-  { text: "If someone I’m seeing flirts with others, I actually feel relieved — less pressure for exclusivity.", category: "C" },
-  { text: "If someone I like checks out others, it honestly makes me feel pretty down.", category: "A" },
-  { text: "If someone I’m seeing pulls away, I can usually tell it’s not always about me.", category: "B" },
-  { text: "If someone I’m dating grows distant, I tend to shut off — sometimes I’m even glad.", category: "C" },
-  { text: "If someone starts acting distant, I assume I must’ve done something wrong.", category: "A" },
-  { text: "If someone breaks up with me, I feel the need to prove they made a mistake.", category: "A" },
-  { text: "If someone ends things after a few months, it’ll sting — but I know I’ll move on.", category: "B" },
-  { text: "Sometimes when I finally get what I wanted, I’m not sure I want it anymore.", category: "C" },
-  { text: "I’d have no problem staying in touch with an ex — especially if we got along well.", category: "B" }
-];
+    { text: "I often worry someone I like will lose interest, even if nothing’s wrong.", category: "A" },
+    { text: "I can show affection and talk about feelings without much hesitation.", category: "B" },
+    { text: "I sometimes hide parts of myself because I'm scared they’ll push people away.", category: "A" },
+    { text: "After a breakup, I usually shut down and move on pretty fast.", category: "C" },
+    { text: "Being single makes me feel like something’s missing or wrong with me.", category: "A" },
+    { text: "I struggle to comfort people when they’re upset — it makes me uncomfortable.", category: "C" },
+    { text: "If my partner doesn’t text back, I spiral into thoughts like 'They’ve lost interest.'", category: "A" },
+    { text: "I feel okay relying on someone emotionally and letting them rely on me.", category: "B" },
+    { text: "Sometimes I feel like closeness threatens my personal space.", category: "C" },
+    { text: "Even in serious relationships, I hold back from sharing my deeper feelings.", category: "C" },
+    { text: "If I open up emotionally, I worry I’ll come off as needy.", category: "A" },
+    { text: "I generally feel secure and happy in my relationships.", category: "B" },
+    { text: "I don’t create drama or overreact in relationships — I stay pretty steady.", category: "B" },
+    { text: "My mind constantly analyzes the state of my relationship.", category: "A" },
+    { text: "It’s hard for me to fully trust someone enough to depend on them.", category: "C" },
+    { text: "I get emotionally attached to people very quickly — even early on.", category: "A" },
+    { text: "It’s easy for me to express what I need from someone I'm close to.", category: "B" },
+    { text: "Sometimes I feel annoyed with my partner but can’t figure out why.", category: "A" },
+    { text: "If my partner’s mood shifts, I feel it immediately — almost like it's mine too.", category: "A" },
+    { text: "I believe most people are reliable and honest at their core.", category: "B" },
+    { text: "I’m more comfortable keeping things casual than going deep emotionally.", category: "C" },
+    { text: "I don’t mind sharing what’s on my mind if I trust the other person.", category: "B" },
+    { text: "The thought of losing someone I love makes me feel empty and scared.", category: "A" },
+    { text: "When someone gets emotionally close, I feel the need to create distance.", category: "C" },
+    { text: "Arguments can overwhelm me — I sometimes say things I don’t mean.", category: "A" },
+    { text: "A disagreement doesn’t make me doubt the whole relationship.", category: "B" },
+    { text: "People I’ve dated often say I seem emotionally unavailable.", category: "C" },
+    { text: "Sometimes I don’t feel attractive or lovable enough to be wanted long-term.", category: "A" },
+    { text: "I’m not into drama — I’d rather keep things calm and respectful.", category: "B" },
+    { text: "I miss my partner, but at the same time, I pull back or act distant.", category: "C" },
+    { text: "I can disagree with someone and still feel confident in the relationship.", category: "B" },
+    { text: "When others depend on me emotionally, I feel trapped or pressured.", category: "C" },
+    { text: "If someone I’m into flirts with others, I shrug it off — not a big deal.", category: "B" },
+    { text: "If someone I like flirts with others, I weirdly feel relieved — less pressure.", category: "C" },
+    { text: "If someone I like flirts with others, I feel unwanted or insecure.", category: "A" },
+    { text: "If someone acts distant, I try not to take it personally — they might be going through something.", category: "B" },
+    { text: "If someone grows distant, I emotionally check out — almost like I beat them to it.", category: "C" },
+    { text: "If someone pulls away, I immediately think I did something wrong.", category: "A" },
+    { text: "If someone leaves me, I obsess over proving they made a mistake.", category: "A" },
+    { text: "If a relationship ends, I feel it — but I trust I’ll move on eventually.", category: "B" },
+    { text: "Sometimes after chasing something (or someone), I lose interest once I have it.", category: "C" },
+    { text: "I’m okay staying friends with an ex — as long as things ended respectfully.", category: "B" }
+  ];
+  
 
 const sections = [
   {
@@ -94,26 +90,16 @@ const totalPages = Math.ceil(questions.length / questionsPerPage);
 
 // === Events ===
 document.getElementById("userForm").addEventListener("submit", (e) => {
-    e.preventDefault();
-  
-    // Get user form values
-    const name = document.getElementById("username").value.trim();
-    const gender = document.getElementById("gender").value;
-    const relationship = document.getElementById("relationship").value;
-  
-    // Save to localStorage to use later in result.html
-    localStorage.setItem("userDetails", JSON.stringify({
-      name,
-      gender,
-      relationship
-    }));
-  
-    // Hide intro, show quiz
-    formSection.classList.add("hidden");
-    quizSection.classList.remove("hidden");
-    renderQuestions();
-  });
-  
+  e.preventDefault();
+  const name = document.getElementById("username").value.trim();
+  const gender = document.getElementById("gender").value;
+  const relationship = document.getElementById("relationship").value;
+  localStorage.setItem("userDetails", JSON.stringify({ name, gender, relationship }));
+  formSection.classList.add("hidden");
+  quizSection.classList.remove("hidden");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  renderQuestions();
+});
 
 nextBtn.addEventListener("click", () => {
   if (currentPage < totalPages - 1) {
@@ -132,7 +118,6 @@ prevBtn.addEventListener("click", () => {
   }
 });
 
-// === Functions ===
 function renderQuestions() {
   quizContainer.innerHTML = "";
   const start = currentPage * questionsPerPage;
@@ -150,15 +135,11 @@ function renderQuestions() {
   currentQuestions.forEach((q, index) => {
     const questionIndex = start + index;
     const div = document.createElement("div");
-    div.className = "question";
+    div.className = "question fade-in";
     div.innerHTML = `
       <p>${q.text}</p>
-      <label><input type="radio" name="q${questionIndex}" value="yes" ${
-        answers[questionIndex] === "yes" ? "checked" : ""
-      }> Yes</label>
-      <label><input type="radio" name="q${questionIndex}" value="no" ${
-        answers[questionIndex] === "no" ? "checked" : ""
-      }> No</label>
+      <label><input type="radio" name="q${questionIndex}" value="yes" ${answers[questionIndex] === "yes" ? "checked" : ""}> Yes</label>
+      <label><input type="radio" name="q${questionIndex}" value="no" ${answers[questionIndex] === "no" ? "checked" : ""}> No</label>
     `;
     quizContainer.appendChild(div);
   });
@@ -173,6 +154,7 @@ function renderQuestions() {
   updateProgress();
   prevBtn.style.display = currentPage === 0 ? "none" : "inline-block";
   nextBtn.textContent = currentPage === totalPages - 1 ? "See Results" : "Next";
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function updateProgress() {
