@@ -530,4 +530,109 @@ body.dark .user-form select {
     font-weight: 600;
     margin-top: 2rem;
   }
-  
+ 
+  /* === Story Preview Section === */
+.story-preview {
+  max-width: 750px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+body.dark .story-preview {
+  background-color: rgba(31, 41, 55, 0.95);
+  border: 1px solid var(--border-dark);
+}
+
+.story-preview .section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.story-preview .story-text {
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+body.dark .story-preview .story-text {
+  color: #ccc;
+}
+
+/* === Smooth hover animations for buttons === */
+.cta-button,
+.nav-button {
+  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.cta-button:hover,
+.nav-button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.encouragement {
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid var(--primary);
+  background-color: rgba(240, 249, 255, 0.7);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  color: #1f2937;
+}
+
+body.dark .encouragement {
+  background-color: rgba(30, 58, 138, 0.2);
+  color: #cbd5e1;
+  border-color: #60a5fa;
+}
+
+.quiz-length-hint {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  color: #6b7280;
+  text-align: center;
+}
+body.dark .quiz-length-hint {
+  color: #9ca3af;
+}
+
+.section-progress {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+body.dark .section-progress {
+  color: #9ca3af;
+}
+
+.stepper {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.step {
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.step.active {
+  transform: scale(1.2);
+  text-shadow: 0 0 4px var(--primary);
+}
+
+.step.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
