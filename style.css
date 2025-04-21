@@ -324,9 +324,13 @@ body.dark .user-form {
 }
 
 .user-form label {
+  display: flex;
+  flex-direction: column;
   font-weight: 600;
   color: var(--text-dark);
+  gap: 0.3rem; /* optional, adds spacing between label and input */
 }
+
 
 body.dark .user-form label {
   color: var(--text-light);
