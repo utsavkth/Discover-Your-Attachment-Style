@@ -39,35 +39,42 @@
       <p class="hero-subtext">Please fill in a few quick details so we can personalize your results.</p>
 
       <form id="userForm" class="user-form" aria-label="User Info Form">
-        <label for="username">
-          Name:
-          <input type="text" id="username" name="username" placeholder="Enter your name" required />
-        </label>
+  <label for="username">
+    Name:
+    <input
+      type="text"
+      id="username"
+      name="username"
+      placeholder="Enter your name"
+      required
+    />
+  </label>
 
-        <label for="gender">
-          Gender:
-          <select id="gender" name="gender" required>
-            <option value="">Select</option>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Non-Binary</option>
-            <option>Prefer not to say</option>
-          </select>
-        </label>
+  <label for="gender">
+    Gender:
+    <select id="gender" name="gender" required>
+      <option value="" disabled selected>Select your gender</option>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Non-Binary</option>
+      <option>Prefer not to say</option>
+    </select>
+  </label>
 
-        <label for="relationship">
-          Relationship Status:
-          <select id="relationship" name="relationship" required>
-            <option value="">Select</option>
-            <option>Single</option>
-            <option>In a relationship</option>
-            <option>Married</option>
-            <option>It’s complicated</option>
-          </select>
-        </label>
+  <label for="relationship">
+    Relationship Status:
+    <select id="relationship" name="relationship" required>
+      <option value="" disabled selected>Select your relationship status</option>
+      <option>Single</option>
+      <option>In a relationship</option>
+      <option>Married</option>
+      <option>It’s complicated</option>
+    </select>
+  </label>
 
-        <button type="submit" class="cta-button">Start Quiz</button>
-      </form>
+  <button type="submit" class="cta-button">Start Quiz</button>
+</form>
+
     </section>
 
     <section id="quizSection" class="quiz-section hidden fade-in">
